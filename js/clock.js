@@ -1,5 +1,7 @@
 $(document).ready(function() {
-// Update clock every second
+    $("#main").hide();
+    $("#clock-container").hide();
+    // Update clock every second
     setInterval( function() {
         //Get current hour, minute, second
         var seconds = new Date().getSeconds();

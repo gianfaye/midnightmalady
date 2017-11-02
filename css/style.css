@@ -3,39 +3,73 @@
 	padding: 0;
 }
 
+html,body{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+html{
+	background: #000;
+}
+
+#clock-container{
+	width: 100%;
+	height: 100%;
+	display: flex;
+    align-items: center; 
+}
+
 #clock {
 	position: relative;
-	width: 600px;
-	height: 600px;
+	width: 400px;
+	height: 400px;
 	margin: 20px auto 0 auto;
-	background: url(../images/clockface.jpg);
+	background: url(../assets/clockface.png);
 	list-style: none;
 }
 
 #sec, #min, #hour {
 	position: absolute;
-	width: 30px;
-	height: 600px;
+	width: 20px;
+	height: 400px;
 	top: 0px;
-	left: 285px;
+	left: 190px;
 }
 
 #sec {
-	background: url(../images/sechand.png);
+	background: url(../assets/sechand.png);
 	z-index: 3;
 }
    
 #min {
-	background: url(../images/minhand.png);
+	background: url(../assets/minhand.png);
 	z-index: 2;
 }
    
 #hour {
-	background: url(../images/hourhand.png);
+	background: url(../assets/hourhand.png);
 	z-index: 1;
 }
    	
 p {
     text-align: center; 
     padding: 10px 0 0 0;
+}
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
