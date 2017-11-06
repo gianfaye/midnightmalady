@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $("#main").hide();
-    $("#clock-container").hide();
+    $("#teaser").hide();
     // Update clock every second
     setInterval( function() {
         //Get current hour, minute, second
@@ -11,11 +11,15 @@ $(document).ready(function() {
         //Check if midnight
         if(hours==0){
             $("#main").show();
-            $("#clock-container").hide();
+            $("#clock-container").css("margin-top","-100%");
+            $("#logo-container").css("margin-top","-10%");
+            $("#teaser").hide();
         }
         else{
             $("#main").hide();
-            $("#clock-container").show();
+            $("#teaser").show();
+            $("#clock-container").css("margin-top","");
+            $("#logo-container").css("margin-top","");
             //Position hour, minute, second hands
             var sdegree = seconds * 6;
             var srotate = "rotate(" + sdegree + "deg)";
@@ -31,5 +35,6 @@ $(document).ready(function() {
                console.log("Time: " + hours + ":" + mins + ":" + seconds);
            }
     }, 1000 );
-  
+    var logo = $( "#logo-container" ).html();
+    $( "#logo" ).append(logo);
  }); 
